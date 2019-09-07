@@ -1,0 +1,55 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/atai/Documents/GitHub/C# Exercises/C# Exercises.csproj": {}
+  },
+  "projects": {
+    "/home/atai/Documents/GitHub/C# Exercises/C# Exercises.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/atai/Documents/GitHub/C# Exercises/C# Exercises.csproj",
+        "projectName": "C# Exercises",
+        "projectPath": "/home/atai/Documents/GitHub/C# Exercises/C# Exercises.csproj",
+        "packagesPath": "/home/atai/.nuget/packages/",
+        "outputPath": "/home/atai/Documents/GitHub/C# Exercises/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/atai/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
