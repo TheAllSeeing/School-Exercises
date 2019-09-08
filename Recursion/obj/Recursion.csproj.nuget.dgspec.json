@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/atai/Documents/GitHub/C# Exercises/C# Exercises.csproj": {}
+    "/home/atai/Documents/GitHub/School-Exercises/Recursion/Recursion.csproj": {}
   },
   "projects": {
-    "/home/atai/Documents/GitHub/C# Exercises/C# Exercises.csproj": {
+    "/home/atai/Documents/GitHub/School-Exercises/Recursion/Recursion.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/atai/Documents/GitHub/C# Exercises/C# Exercises.csproj",
-        "projectName": "C# Exercises",
-        "projectPath": "/home/atai/Documents/GitHub/C# Exercises/C# Exercises.csproj",
+        "projectUniqueName": "/home/atai/Documents/GitHub/School-Exercises/Recursion/Recursion.csproj",
+        "projectName": "Recursion",
+        "projectPath": "/home/atai/Documents/GitHub/School-Exercises/Recursion/Recursion.csproj",
         "packagesPath": "/home/atai/.nuget/packages/",
-        "outputPath": "/home/atai/Documents/GitHub/C# Exercises/obj/",
+        "outputPath": "/home/atai/Documents/GitHub/School-Exercises/Recursion/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/atai/.nuget/NuGet/NuGet.Config"

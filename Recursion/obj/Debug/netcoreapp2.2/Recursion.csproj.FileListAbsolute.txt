@@ -1,0 +1,11 @@
+/home/atai/Documents/GitHub/School-Exercises/Recursion/bin/Debug/netcoreapp2.2/Recursion.deps.json
+/home/atai/Documents/GitHub/School-Exercises/Recursion/bin/Debug/netcoreapp2.2/Recursion.runtimeconfig.json
+/home/atai/Documents/GitHub/School-Exercises/Recursion/bin/Debug/netcoreapp2.2/Recursion.runtimeconfig.dev.json
+/home/atai/Documents/GitHub/School-Exercises/Recursion/bin/Debug/netcoreapp2.2/Recursion.dll
+/home/atai/Documents/GitHub/School-Exercises/Recursion/bin/Debug/netcoreapp2.2/Recursion.pdb
+/home/atai/Documents/GitHub/School-Exercises/Recursion/obj/Debug/netcoreapp2.2/Recursion.csprojAssemblyReference.cache
+/home/atai/Documents/GitHub/School-Exercises/Recursion/obj/Debug/netcoreapp2.2/Recursion.csproj.CoreCompileInputs.cache
+/home/atai/Documents/GitHub/School-Exercises/Recursion/obj/Debug/netcoreapp2.2/Recursion.AssemblyInfoInputs.cache
+/home/atai/Documents/GitHub/School-Exercises/Recursion/obj/Debug/netcoreapp2.2/Recursion.AssemblyInfo.cs
+/home/atai/Documents/GitHub/School-Exercises/Recursion/obj/Debug/netcoreapp2.2/Recursion.dll
+/home/atai/Documents/GitHub/School-Exercises/Recursion/obj/Debug/netcoreapp2.2/Recursion.pdb
