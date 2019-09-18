@@ -39,6 +39,18 @@ namespace Recursion
             return ElementList.ToArray();
         }
 
+        static string Readable(int Num)
+        {
+            string UnReadable = Num.ToString();
+            string Readable = String.Empty; 
+            for (int i = Readable.Length - 1; i >= 0 ; i++)
+            {
+                Readable += UnReadable[i].ToString();
+                if (i % 3 == 0 && i != 0) Readable += ",";
+            }
+            return Readable;
+        }
+
         static void Main(string[] args)
         {
             int Result;
@@ -343,11 +355,19 @@ namespace Recursion
                         int CornerColumn = int.Parse(Console.ReadLine());
                         PrintSubArr(Array2D, CornerLine, CornerColumn);
                         break;
+                    case("42"):
+                        Console.WriteLine("Please innsert a number and we will print its check digit.");
+                        Console.WriteLine($"Result: {CheckDigit(int.Parse(Console.ReadLine()))}");
+                        break;
+                    case("44"):
+                        Console.WriteLine("This program calculates the amount of "
+                        + "possible routes from the left corner of a 10x10 board to its bottom-right."
+                        + $"\nOur result? {/*Readable(*/CalculateRoutes()/*)*/}");
+                        break;
                     default:
                         Console.WriteLine("Exercise not found.");
                         break;
                 }
-
 
             }
         }
@@ -1099,6 +1119,8 @@ namespace Recursion
                     Print2DArr(Arr, 0, Line + 1);
                 }
             }
+
+            else Console.WriteLine(); ;
         }
 
         /// <summary>
@@ -1152,7 +1174,7 @@ namespace Recursion
         }
 
         //---------Exercise 35--------
-        static void PrintSubArr(int[,] Arr, int i, int j, int OriginalI)
+        static void PrintSubArr(int[,] Arr, int i, int j, int OriginalJ)
         {
             int Element = Arr[i, j];
 
@@ -1161,23 +1183,23 @@ namespace Recursion
             if (Math.Abs(Element) < 10) Console.Write(" ");
             if (Element > 0) Console.Write(" ");
 
-            if(j == Arr.GetLength(1) - 1) //If it's the last in line, go the next line.
+            if (j == Arr.GetLength(1) - 1) //If it's the last in line, go the next line.
             {
-                
+                Console.WriteLine();
             }
 
             //If it's not the end of the array 
-            if(!(j == Arr.GetLength(1) - 1 && i == Arr.GetLength(0) - 1))
+            if (!(j == Arr.GetLength(1) - 1 && i == Arr.GetLength(0) - 1))
             {
-                if (j < Arr.GetLength(1) - 1)
+                if (j < Arr.GetLength(1) - 1) //If it's not the last column
                 {
-                    Console.WriteLine();
-                    PrintSubArr(Arr, j + 1, i, OriginalI);
+                    PrintSubArr(Arr, i, j + 1, OriginalJ); //Move to the next element in line.
                 }
                 
-                else
+                else //If it is
                 {
-                    PrintSubArr(Arr, OriginalI, i + 1, OriginalI);
+                    Console.WriteLine(); //Move typer to next line.
+                    PrintSubArr(Arr, i + 1, OriginalJ, OriginalJ); //Move to the start of next line
                 }
             }
         }
@@ -1190,9 +1212,88 @@ namespace Recursion
         /// <param name="j">The left corner's line</param>
         static void PrintSubArr(int[,] Arr, int i, int j)
         {
-            PrintSubArr(Arr, i, j, i);
+            PrintSubArr(Arr, i, j, j);
         }
 
+        //---------Exercise 42--------
+        static int DigitSum(int Number)
+        {
+            if(Number == 0) return 0;
 
+            else return DigitSum(Number / 10) + Number % 10;
+        }
+
+        /// <summary>
+        /// Calculates a number's check digit - the result of iterative digit summation
+        /// until the result is single-digit. 
+        /// </summary>
+        /// <param name="Number">The number to calculate the check digit of.</param>
+        /// <returns>The number's check digit.</returns>
+        static int CheckDigit(int Number)
+        {
+            int Sum = DigitSum(Number);
+            if(Sum < 10) return Sum;
+            else return CheckDigit(Sum);
+        }
+
+        
+
+        //---------Exercise 44--------
+        static int CalculateRoutes(int LastRow, int LastColumn, bool Down, bool Right)
+        {
+            int NewRow = LastRow + (Down ? 1 : 0);
+            int NewColumn = LastColumn + (Right ? 1 : 0);
+
+            if (NewRow == 9 && NewColumn == 9)
+            {
+                return 1;
+            }
+
+            else
+            {
+                return
+                    (NewRow != 9 && NewColumn != 9 ? //If there's space for diagonal
+                        CalculateRoutes(NewRow, NewColumn, true, true) : 0) //Possibilities Diagonal 
+                    + (NewColumn != 9 ? //If ther'es space for moving right.
+                        CalculateRoutes(NewRow, NewColumn, false, true) : 0) //Possibilites Right
+                    + (NewRow != 9 ? //If ther'es space for moving down
+                        CalculateRoutes(NewRow, NewColumn, true, false) : 0); //Possibilites Down
+            }
+        }
+
+        /// <summary>
+        /// Calculates possible routes from the left corner of a 10x10 board to its bottom-right.
+        /// </summary>
+        /// <returns>The amount of possible routes from the left corner of a 10x10 board to its bottom-right.</returns>
+        static int CalculateRoutes()
+        {
+            return
+                CalculateRoutes(0, 0, true, true)
+                + CalculateRoutes(0, 0, true, false) 
+                + CalculateRoutes(0, 0, false, true);
+        }
+
+        //---------Exercise 45--------
+        static int NeighboreSequence(char[,] Neighborhood, int Line, int Column)
+        {
+            int Res = 0;
+            int[] Directions = {0, 1, -1};
+            foreach (int ColumnDir in Directions)
+            {
+                foreach (int RowDir in Directions)
+                {
+                    if(Neighborhood[Line + RowDir, Column + ColumnDir] == 'x')
+                    {
+                        Res += NeighboreSequence(Neighborhood, Line + RowDir, Column + ColumnDir);
+                        return Res;
+                    }
+
+                    else
+                    {
+                        return 1;
+                    }
+                }
+            }
+        }
     }
 }
